@@ -6,7 +6,7 @@ class Quiz:
         self.score = 0
 
     def display_welcome_message(self):
-        print("Welcome To The Entertainment Quiz!")
+        print("Welcome to the Entertainment Quiz!")
         print("Answer the following questions to test your knowledge.\n")
 
     def present_quiz_questions(self):
@@ -18,6 +18,7 @@ class Quiz:
                     print(f"{i}. {choice}")
             user_answer = input("Your answer: ").strip().lower()
             self.evaluate_user_answer(user_answer, q['answer'])
+            print(f"Score for this question: {self.score}/{len(self.questions)}")
             print()
 
     def evaluate_user_answer(self, user_answer, correct_answer):
@@ -64,11 +65,15 @@ def main():
     quiz.present_quiz_questions()
     quiz.display_final_results()
 
-    play_again = input("Do you want to play again? (y/n): ").strip().lower()
+    play_again = input("Do you want to play again? (yes/no): ").strip().lower()
     if play_again == "yes":
         main()
     else:
-        print("Thank u for playing!")
+        print("Goodbye!")
 
 if __name__ == "__main__":
     main()
+
+           
+          
+    
